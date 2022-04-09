@@ -77,8 +77,7 @@ public class SmartPhoneServiceImpl implements SmartPhoneService{
 
     /**
      * Devuelve el id más alto del mapa smartphones
-     * @return
-     */
+	 */
     private Long getMaxSmartPhoneId() {
     	if (smartphones.isEmpty()) {
     		return 0L;

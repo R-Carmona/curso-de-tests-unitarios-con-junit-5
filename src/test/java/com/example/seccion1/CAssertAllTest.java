@@ -1,29 +1,28 @@
 package com.example.seccion1;
 
-import com.example.demo.service.SmartPhoneService;
 import com.example.demo.service.SmartPhoneServiceImpl;
+import lombok.extern.java.Log;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class CAssertAllTest {
 
+@Log
+public class CAssertAllTest {
 
     @Test
     void assertAllTest() {
 
+        SmartPhoneServiceImpl smartPhoneService = new SmartPhoneServiceImpl();
+
         // Class Under Test
         // System Under Test (SUT)
-        SmartPhoneService service = new SmartPhoneServiceImpl();
+        Integer count = smartPhoneService.count();
 
-        Integer count = service.count();
-
-        // aserciones
-
-        assertAll("Comprobaciones",
+        assertAll("Probando AssertAll.",
                 () -> assertNotNull(count),
-                () -> assertTrue(count > 0),
-                () -> assertEquals(3, count)
-                );
+                () -> assertEquals(3, count),
+                () -> assertEquals(3, count + 1, "Mensaje del Assert de Error, número de elementos esperado es 3."),
+                ()-> assertTrue(0 < count));
     }
 }
