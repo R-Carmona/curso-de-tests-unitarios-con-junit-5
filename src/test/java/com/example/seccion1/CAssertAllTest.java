@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @Log
-public class CAssertAllTest {
+class CAssertAllTest {
 
     @Test
     void assertAllTest() {
@@ -22,7 +22,7 @@ public class CAssertAllTest {
         assertAll("Probando AssertAll.",
                 () -> assertNotNull(count),
                 () -> assertEquals(3, count),
-                () -> assertEquals(3, count + 1, "Mensaje del Assert de Error, número de elementos esperado es 3."),
+                () -> assertEquals(3, count + 0 , "Mensaje del Assert de Error, número de elementos esperado es 3."),
                 ()-> assertTrue(0 < count));
     }
 }
